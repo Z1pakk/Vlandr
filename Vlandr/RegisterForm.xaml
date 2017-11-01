@@ -1,0 +1,118 @@
+﻿<Controls:MetroWindow  x:Class="Vlandr.RegisterForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:Vlandr"
+                       Icon="icon.ico"
+        mc:Ignorable="d"
+        Title="RegisterForm" Height="600" MinHeight="500" MinWidth="700" Width="800" WindowStartupLocation="CenterScreen">
+    
+    <Grid Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="473*"/>
+            <RowDefinition Height="42*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition Width="470*"/>
+            <ColumnDefinition Width="69*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush x:Name="imgBackground"  Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Border   Background="#17BAEF" Grid.Column="1" Grid.Row="1"   >
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="7" Color="Gray" BlurRadius="30" Direction="-90"  RenderingBias="Quality" />
+            </Border.Effect>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="47*"/>
+                    <RowDefinition Height="47*"/>
+                    <RowDefinition Height="47*"/>
+                    <RowDefinition Height="47*"/>
+                    <RowDefinition Height="47*"/>
+                    <RowDefinition Height="47*"/>
+                    <RowDefinition Height="47*"/>
+                    <RowDefinition Height="47*"/>
+                    <RowDefinition Height="112*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Реєстрація" Foreground="White" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" Grid.Column="0" Margin="254,6,253,6" Height="34" Width="122"  />
+
+                <Grid MaxHeight="48" Grid.Column="0" Margin="15,8,5,5" Grid.Row="1" Background="White">
+                    <TextBlock  Margin="5 0 3 0"  FontSize="20" VerticalAlignment="Center"  Text="Ім'я" Foreground="Gray"
+                       Visibility="{Binding ElementName=txtFirstName, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <TextBox Margin="3 0 3 0"  Name="txtFirstName" Foreground="Black" FontSize="20"  Style="{StaticResource ResourceKey=HintTextBox}" Background="Transparent" />
+
+                </Grid>
+
+                <Grid MaxHeight="48" Grid.Column="1" Margin="5,8,15,5" Grid.Row="1" Background="White">
+                    <TextBlock  Margin="5 0 3 0"  FontSize="20" VerticalAlignment="Center"  Text="Прізвище" Foreground="Gray"
+                       Visibility="{Binding ElementName=txtSurName, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <TextBox Margin="3 0 3 0"  Name="txtSurName" Foreground="Black" FontSize="20"  Style="{StaticResource ResourceKey=HintTextBox}" Background="Transparent" />
+
+                </Grid>
+                <Grid MaxHeight="48" Margin="15,8,15,5" Grid.Row="2" Background="White" Grid.ColumnSpan="2">
+                    <TextBlock  Margin="5 0 3 0"  FontSize="20" VerticalAlignment="Center"  Text="Пошта" Foreground="Gray"
+                       Visibility="{Binding ElementName=txtEmail, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <TextBox Margin="3 0 3 0"  Name="txtEmail" Foreground="Black" FontSize="20"  Style="{StaticResource ResourceKey=HintTextBox}" Background="Transparent" />
+
+                </Grid>
+                <Grid MaxHeight="48" Margin="15,8,15,5" Grid.Row="3" Background="White" Grid.ColumnSpan="2">
+                    <TextBlock  Margin="5 0 3 0"  FontSize="20" VerticalAlignment="Center"  Text="Телефон" Foreground="Gray"
+                       Visibility="{Binding ElementName=txtPhoneNumber, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <TextBox Margin="3 0 3 0"  Name="txtPhoneNumber" Foreground="Black" FontSize="20"  Style="{StaticResource ResourceKey=HintTextBox}" Background="Transparent" />
+
+                </Grid>
+                <Grid MaxHeight="48"  Margin="15,8,15,5" Grid.Row="4" Background="White" Grid.ColumnSpan="2">
+                    <TextBlock  Margin="5 0 3 0"  FontSize="20" VerticalAlignment="Center"  Text="Новий Пароль.." Foreground="Gray"
+                       Visibility="{Binding ElementName=txtNewPassword, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <TextBox Margin="3 0 3 0"  Name="txtNewPassword" Foreground="Black" FontSize="20"  Style="{StaticResource ResourceKey=HintTextBox}" Background="Transparent" />
+
+                </Grid>
+                
+
+                <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="210*"/>
+                        <ColumnDefinition Width="209*"/>
+                        <ColumnDefinition Width="210*"/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox HorizontalContentAlignment="Center"   BorderThickness="0" IsEditable="True" Foreground="Gray"  Text="День" MaxHeight="48" Margin="15,8,5,5" FontSize="20"   Grid.Column="0" Cursor="Hand">
+                       
+                    </ComboBox>
+                    <ComboBox  HorizontalContentAlignment="Center"  BorderThickness="0" IsEditable="True" Foreground="Gray" MaxHeight="48" Margin="5,8,5,5" FontSize="20"  Text="Місяць" Grid.Column="1" Cursor="Hand"/>
+                    <ComboBox  HorizontalContentAlignment="Center"  BorderThickness="0" IsEditable="True" Foreground="Gray" MaxHeight="48" Margin="5,8,15,5" FontSize="20"  Text="Рік" Grid.Column="2" Cursor="Hand"/>
+                </Grid>
+
+
+                <Grid MaxHeight="48"  Margin="15,8,15,5" Grid.Row="6" Background="White" Grid.ColumnSpan="2">
+                    <TextBlock  Margin="5 0 3 0"  FontSize="20" VerticalAlignment="Center"  Text="Місто" Foreground="Gray"
+                       Visibility="{Binding ElementName=txtCity, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <TextBox Margin="3 0 3 0"  Name="txtCity" Foreground="Black" FontSize="20"  Style="{StaticResource ResourceKey=HintTextBox}" Background="Transparent" />
+                </Grid>
+                <Grid MaxHeight="48" Margin="15,8,15,5" Grid.Row="7" Background="White" Grid.ColumnSpan="2">
+                    <TextBlock  Margin="5 0 3 0"  FontSize="20" VerticalAlignment="Center"  Text="Хобі" Foreground="Gray"
+                       Visibility="{Binding ElementName=txtHobby, Path=Text.IsEmpty, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <TextBox Margin="3 0 3 0"  Name="txtHobby" Foreground="Black" FontSize="20"  Style="{StaticResource ResourceKey=HintTextBox}" Background="Transparent" />
+                </Grid>
+                <Button Grid.Row="8"  Grid.ColumnSpan="2" MaxHeight="120" MaxWidth="500" Style="{StaticResource ResourceKey=DefaultButtonStyle}"  Content="Register" FontSize="25" Margin="150,25,150,25" Cursor="Hand">
+                    
+                </Button>
+
+
+
+            </Grid>
+        </Border>
+
+    </Grid>
+    </Controls:MetroWindow >
